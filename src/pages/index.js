@@ -18,7 +18,7 @@ const IndexPage = (props) => {
             {edge.node.title}
           </Link>
         </h2>
-        <p dangerouslySetInnerHTML={{ __html: edge.node.bodyHTML }} />
+        <div dangerouslySetInnerHTML={{ __html: edge.node.bodyHTML }} />
       </div>
     })}
     <Link to="/page-2/">Go to page 2</Link>

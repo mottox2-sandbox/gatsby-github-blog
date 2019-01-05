@@ -13,7 +13,7 @@ const IndexPage = (props) => {
 }
 
 export const query = graphql`
-  query GithubIssue($number: Int!) {
+  query($number: Int!) {
     github {
       repository(owner: "mottox2-sandbox", name: "gatsby-github-blog") {
         issue(number: $number) {
