@@ -13,7 +13,11 @@ const IndexPage = (props) => {
     </div>
     { props.data.github.repository.issues.edges.map(edge => {
       return <div>
-        <h2>{edge.node.title}</h2>
+        <h2>
+          <Link to={`/issues/${edge.node.number}`}>
+            {edge.node.title}
+          </Link>
+        </h2>
         <p dangerouslySetInnerHTML={{ __html: edge.node.bodyHTML }} />
       </div>
     })}
@@ -28,7 +32,7 @@ export const query = graphql`
       issues(first: 10) {
         edges {
           node {
-            id
+            number
             bodyHTML
             title
           }
